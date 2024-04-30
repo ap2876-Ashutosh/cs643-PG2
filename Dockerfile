@@ -40,7 +40,7 @@ RUN wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.0.0/hadoo
 # Copy necessary files into the container
 COPY ap2876-wine-prediction2.py /opt/
 COPY ValidationDataset.csv /opt/
-COPY trainedmodel /opt/ap2876-train-model/
+COPY ap2876-train-model /opt/ap2876-train-model/
 
 # Set the entry point and default command
 CMD ["spark-submit", "/opt/ap2876-wine-prediction2.py", "/opt/ValidationDataset.csv"]
