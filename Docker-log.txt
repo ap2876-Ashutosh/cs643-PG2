@@ -1,0 +1,46 @@
+[root@ip-172-31-27-18 hadoop]# docker run ap2876/wine-prediction
+/opt/spark/bin/load-spark-env.sh: line 68: ps: command not found
+Application Begins...
+24/04/30 07:48:15 INFO SparkContext: Running Spark version 3.5.0
+24/04/30 07:48:15 INFO SparkContext: OS info Linux, 6.1.84-99.169.amzn2023.x86_64, amd64
+24/04/30 07:48:15 INFO SparkContext: Java version 1.8.0_342
+24/04/30 07:48:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/30 07:48:16 INFO ResourceUtils: ==============================================================
+24/04/30 07:48:16 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/04/30 07:48:16 INFO ResourceUtils: ==============================================================
+24/04/30 07:48:16 INFO SparkContext: Submitted application: ap2876-wine-model
+24/04/30 07:48:16 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/04/30 07:48:16 INFO ResourceProfile: Limiting resource is cpu
+24/04/30 07:48:16 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/04/30 07:48:16 INFO SecurityManager: Changing view acls to: root
+24/04/30 07:48:16 INFO SecurityManager: Changing modify acls to: root
+24/04/30 07:48:16 INFO SecurityManager: Changing view acls groups to:
+24/04/30 07:48:16 INFO SecurityManager: Changing modify acls groups to:
+24/04/30 07:48:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+24/04/30 07:48:16 INFO Utils: Successfully started service 'sparkDriver' on port 34503.
+24/04/30 07:48:16 INFO SparkEnv: Registering MapOutputTracker
+24/04/30 07:48:16 INFO SparkEnv: Registering BlockManagerMaster
+24/04/30 07:48:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/04/30 07:48:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/04/30 07:48:16 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/04/30 07:48:16 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-90bd3c54-5f1f-40f5-a813-388ea4ac51db
+24/04/30 07:48:16 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/04/30 07:48:16 INFO SparkEnv: Registering OutputCommitCoordinator
+24/04/30 07:48:16 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+24/04/30 07:48:16 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/04/30 07:48:16 INFO Executor: Starting executor ID driver on host 36fe20e34d9e
+24/04/30 07:48:16 INFO Executor: OS info Linux, 6.1.84-99.169.amzn2023.x86_64, amd64
+24/04/30 07:48:16 INFO Executor: Java version 1.8.0_342
+24/04/30 07:48:17 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/04/30 07:48:17 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@252dcfa1 for default.
+24/04/30 07:48:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32837.
+24/04/30 07:48:17 INFO NettyBlockTransferService: Server created on 36fe20e34d9e:32837
+24/04/30 07:48:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/04/30 07:48:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 36fe20e34d9e, 32837, None)
+24/04/30 07:48:17 INFO BlockManagerMasterEndpoint: Registering block manager 36fe20e34d9e:32837 with 366.3 MiB RAM, BlockManagerId(driver, 36fe20e34d9e, 32837, None)
+24/04/30 07:48:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 36fe20e34d9e, 32837, None)
+24/04/30 07:48:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 36fe20e34d9e, 32837, None)
+Test Accuracy value = 0.96875
+/opt/spark/python/lib/pyspark.zip/pyspark/sql/context.py:158: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+Weighted F1 Score = 0.9541901629072682
+!!!!AP2876 OUT !!!!!!

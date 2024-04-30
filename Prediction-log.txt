@@ -1,0 +1,123 @@
+[root@ip-172-31-27-18 hadoop]# spark-submit ap2876-wine-prediction.py
+Apr 30, 2024 7:25:51 AM org.apache.spark.launcher.Log4jHotPatchOption staticJavaAgentOption
+WARNING: spark.log4jHotPatch.enabled is set to true, but /usr/share/log4j-cve-2021-44228-hotpatch/jdk17/Log4jHotPatchFat.jar does not exist at the configured location
+
+Application Begins...
+24/04/30 07:25:54 INFO SparkContext: Running Spark version 3.5.0-amzn-1
+24/04/30 07:25:54 INFO SparkContext: OS info Linux, 6.1.84-99.169.amzn2023.x86_64, amd64
+24/04/30 07:25:54 INFO SparkContext: Java version 17.0.10
+24/04/30 07:25:54 INFO ResourceUtils: ==============================================================
+24/04/30 07:25:54 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/04/30 07:25:54 INFO ResourceUtils: ==============================================================
+24/04/30 07:25:54 INFO SparkContext: Submitted application: ap2876-wine-model
+24/04/30 07:25:54 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 4, script: , vendor: , memory -> name: memory, amount: 9486, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/04/30 07:25:54 INFO ResourceProfile: Limiting resource is cpus at 4 tasks per executor
+24/04/30 07:25:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/04/30 07:25:54 INFO SecurityManager: Changing view acls to: root
+24/04/30 07:25:54 INFO SecurityManager: Changing modify acls to: root
+24/04/30 07:25:54 INFO SecurityManager: Changing view acls groups to:
+24/04/30 07:25:54 INFO SecurityManager: Changing modify acls groups to:
+24/04/30 07:25:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+24/04/30 07:25:54 INFO Utils: Successfully started service 'sparkDriver' on port 42771.
+24/04/30 07:25:54 INFO SparkEnv: Registering MapOutputTracker
+24/04/30 07:25:54 INFO SparkEnv: Registering BlockManagerMaster
+24/04/30 07:25:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/04/30 07:25:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/04/30 07:25:55 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/04/30 07:25:55 INFO DiskBlockManager: Created local directory at /mnt/tmp/blockmgr-6511ad4d-a9aa-4f5e-a141-6ae4570bc3f8
+24/04/30 07:25:55 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+24/04/30 07:25:55 INFO SparkEnv: Registering OutputCommitCoordinator
+24/04/30 07:25:55 INFO SubResultCacheManager: Sub-result caches are disabled.
+24/04/30 07:25:55 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+24/04/30 07:25:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/04/30 07:25:55 INFO Utils: Using 50 preallocated executors (minExecutors: 0). Set spark.dynamicAllocation.preallocateExecutors to `false` disable executor preallocation.
+24/04/30 07:25:55 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at ip-172-31-27-18.ec2.internal/172.31.27.18:8032
+24/04/30 07:25:56 INFO Configuration: resource-types.xml not found
+24/04/30 07:25:56 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+24/04/30 07:25:56 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (12288 MB per container)
+24/04/30 07:25:56 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+24/04/30 07:25:56 INFO Client: Setting up container launch context for our AM
+24/04/30 07:25:56 INFO Client: Setting up the launch environment for our AM container
+24/04/30 07:25:56 INFO Client: Preparing resources for our AM container
+24/04/30 07:25:56 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+24/04/30 07:25:57 INFO Client: Uploading resource file:/mnt/tmp/spark-c247e6db-1a7a-483f-bb9d-af07439238a6/__spark_libs__9608749658848008229.zip -> hdfs://ip-172-31-27-18.ec2.internal:8020/user/root/.sparkStaging/application_1714447712437_0007/__spark_libs__9608749658848008229.zip
+24/04/30 07:25:58 INFO Client: Uploading resource file:/etc/spark/conf.dist/hive-site.xml -> hdfs://ip-172-31-27-18.ec2.internal:8020/user/root/.sparkStaging/application_1714447712437_0007/hive-site.xml
+24/04/30 07:25:58 INFO Client: Uploading resource file:/etc/hudi/conf.dist/hudi-defaults.conf -> hdfs://ip-172-31-27-18.ec2.internal:8020/user/root/.sparkStaging/application_1714447712437_0007/hudi-defaults.conf
+24/04/30 07:25:58 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://ip-172-31-27-18.ec2.internal:8020/user/root/.sparkStaging/application_1714447712437_0007/pyspark.zip
+24/04/30 07:25:58 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.9.7-src.zip -> hdfs://ip-172-31-27-18.ec2.internal:8020/user/root/.sparkStaging/application_1714447712437_0007/py4j-0.10.9.7-src.zip
+24/04/30 07:25:58 INFO Client: Uploading resource file:/mnt/tmp/spark-c247e6db-1a7a-483f-bb9d-af07439238a6/__spark_conf__17309174544239150695.zip -> hdfs://ip-172-31-27-18.ec2.internal:8020/user/root/.sparkStaging/application_1714447712437_0007/__spark_conf__.zip
+24/04/30 07:25:58 INFO SecurityManager: Changing view acls to: root
+24/04/30 07:25:58 INFO SecurityManager: Changing modify acls to: root
+24/04/30 07:25:58 INFO SecurityManager: Changing view acls groups to:
+24/04/30 07:25:58 INFO SecurityManager: Changing modify acls groups to:
+24/04/30 07:25:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+24/04/30 07:25:58 INFO Client: Submitting application application_1714447712437_0007 to ResourceManager
+24/04/30 07:25:58 INFO YarnClientImpl: Submitted application application_1714447712437_0007
+24/04/30 07:25:59 INFO Client: Application report for application_1714447712437_0007 (state: ACCEPTED)
+24/04/30 07:25:59 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1714461958841
+         final status: UNDEFINED
+         tracking URL: http://ip-172-31-27-18.ec2.internal:20888/proxy/application_1714447712437_0007/
+         user: root
+24/04/30 07:26:03 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> ip-172-31-27-18.ec2.internal, PROXY_URI_BASES -> http://ip-172-31-27-18.ec2.internal:20888/proxy/application_1714447712437_0007), /proxy/application_1714447712437_0007
+24/04/30 07:26:03 INFO Client: Application report for application_1714447712437_0007 (state: RUNNING)
+24/04/30 07:26:03 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 172.31.18.79
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1714461958841
+         final status: UNDEFINED
+         tracking URL: http://ip-172-31-27-18.ec2.internal:20888/proxy/application_1714447712437_0007/
+         user: root
+24/04/30 07:26:03 INFO YarnClientSchedulerBackend: Application application_1714447712437_0007 has started running.
+24/04/30 07:26:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37881.
+24/04/30 07:26:03 INFO NettyBlockTransferService: Server created on ip-172-31-27-18.ec2.internal:37881
+24/04/30 07:26:03 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/04/30 07:26:03 INFO BlockManager: external shuffle service port = 7337
+24/04/30 07:26:03 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-27-18.ec2.internal, 37881, None)
+24/04/30 07:26:03 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+24/04/30 07:26:03 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-27-18.ec2.internal:37881 with 1048.8 MiB RAM, BlockManagerId(driver, ip-172-31-27-18.ec2.internal, 37881, None)
+24/04/30 07:26:03 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-27-18.ec2.internal, 37881, None)
+24/04/30 07:26:03 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-27-18.ec2.internal, 37881, None)
+24/04/30 07:26:04 INFO SingleEventLogFileWriter: Logging events to hdfs:/var/log/spark/apps/application_1714447712437_0007.inprogress
+24/04/30 07:26:04 INFO Utils: Using 50 preallocated executors (minExecutors: 0). Set spark.dynamicAllocation.preallocateExecutors to `false` disable executor preallocation.
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /jobs: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /jobs/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /jobs/job: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /jobs/job/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages/stage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages/stage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages/pool: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages/pool/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /storage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /storage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /storage/rdd: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /storage/rdd/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /environment: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /environment/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /executors: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /executors/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /executors/threadDump: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /executors/threadDump/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /executors/heapHistogram: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /executors/heapHistogram/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /static: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /api: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /jobs/job/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /stages/stage/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+24/04/30 07:26:04 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+Test Accuracy value = 0.96875
+/usr/lib/spark/python/lib/pyspark.zip/pyspark/sql/context.py:158: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+Weighted F1 Score = 0.9541901629072682
+!!!!AP2876 OUT !!!!!!
